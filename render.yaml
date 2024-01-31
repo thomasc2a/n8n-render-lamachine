@@ -5,30 +5,39 @@ services:
     region: frankfurt # optional (defaults to oregon)
     plan: free # optional (defaults to starter)
     branch: main # optional (defaults to master)
-    # dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
     numInstances: 1
     healthCheckPath: /
     envVars:
-      - key: PGHOST
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
         fromDatabase:
           name: n8nDB
           property: host
-      - key: PGDATABASE
+      - key: DB_POSTGRESDB_DATABASE
         fromDatabase:
           name: n8nDB
           property: database
-      - key: PGPORT
+      - key: DB_POSTGRESDB_PORT
         fromDatabase:
           name: n8nDB
           property: port
-      - key: PGUSER
+      - key: DB_POSTGRESDB_USER
         fromDatabase:
           name: n8nDB
           property: user
-      - key: PGPASSWORD
+      - key: DB_POSTGRESDB_PASSWORD
         fromDatabase:
           name: n8nDB
           property: password
+      - key: GENERIC_TIMEZONE
+        value: Europe/Paris
+      - key: N8N_DEFAULT_LOCALE
+        value: fr
+      - key: N8N_ENCRYPTION_KEY
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
 
 databases:
   - name: n8nDB
