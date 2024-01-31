@@ -44,9 +44,6 @@ services:
         generateValue: true
       - key: WEBHOOK_URL
         sync: false
-    disk:
-      name: n8nDisk
-      mountPath: /home/node/.n8n
 
 databases:
   - name: n8nDB
