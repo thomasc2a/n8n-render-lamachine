@@ -41,7 +41,6 @@ services:
     disk:
       name: n8nDisk
       mountPath: /home/node/.n8n
-      sizeGB: 1
 
 databases:
   - name: n8nDB
