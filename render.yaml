@@ -30,7 +30,13 @@ services:
         fromDatabase:
           name: n8nDB
           property: password
+      - key: PORT
+        value: 5678
+      - key: N8N_LOG_LEVEL
+        value: verbose
       - key: GENERIC_TIMEZONE
+        value: Europe/Paris
+      - key: TZ
         value: Europe/Paris
       - key: N8N_DEFAULT_LOCALE
         value: fr
