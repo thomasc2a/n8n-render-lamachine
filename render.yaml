@@ -41,7 +41,7 @@ services:
       - key: N8N_DEFAULT_LOCALE
         value: fr
       - key: N8N_ENCRYPTION_KEY
-        sync: false
+        generateValue: true
       - key: WEBHOOK_URL
         sync: false
     disk:
