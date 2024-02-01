@@ -43,7 +43,7 @@ services:
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: WEBHOOK_URL
-        sync: false
+        value: TOCHANGE
 
 databases:
   - name: n8nDB
