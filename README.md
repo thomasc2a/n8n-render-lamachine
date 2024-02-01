@@ -3,7 +3,7 @@
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 
-## How to install n8n on render.com for free
+### How to install n8n on render.com for free
 
 Follow these steps :
 
