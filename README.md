@@ -1,13 +1,14 @@
 # n8n-render
 
-Successfull installation of n8n on Render using Docker.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
-To make it run just open Render Dashboard and use this git as Blueprint.
 
-Important note if using disk on Render: Keep the mountPath as is, otherwise n8n won't change the data.
+## How to install n8n on render.com for free
 
-The .env file contain examples of lines that can be added manually on Environment Variables on Render after install.
+Follow these steps :
 
-To change the webhook URL from localhost to your domain, for example, just add the var WEBHOOK_URL followed by the full URL.
+1. Click on the render button above
+2. 
 
-Version 0.224.1
+
+Created by Antoine Deschamps for La Machine. Inspired by ready4mars.
