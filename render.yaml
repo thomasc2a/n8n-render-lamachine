@@ -33,7 +33,7 @@ services:
       - key: PORT
         value: 5678
       - key: N8N_LOG_LEVEL
-        value: verbose
+        value: info
       - key: GENERIC_TIMEZONE
         value: Europe/Paris
       - key: TZ
@@ -42,8 +42,6 @@ services:
         value: fr
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-      - key: WEBHOOK_URL
-        sync: false
 
 databases:
   - name: n8nDB
