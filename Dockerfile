@@ -1,18 +1,9 @@
-# Use the official n8n image as the base image
 FROM n8nio/n8n:latest
 
-# Install Puppeteer dependencies for Alpine Linux
-RUN apk update && apk add --no-cache \
-    chromium \
-    nss \
-    freetype \
-    harfbuzz \
-    ca-certificates \
-    ttf-freefont \
-    wget
+# Install puppeteer-core and ZenRows SDK
+RUN npm install -g puppeteer-core @zenrows/browser-sdk
 
-# Tell Puppeteer to use the installed Chromium executable
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+# Set environment variable to allow external modules
+ENV NODE_FUNCTION_ALLOW_EXTERNAL=puppeteer-core,@zenrows/browser-sdk
 
-# Install Puppeteer and Zenrows Browser Scraper via npm
-RUN npm install puppeteer zenrows-browser-scraper
+# Continue with the n8n startup command (if not already specified)
