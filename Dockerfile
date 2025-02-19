@@ -1,9 +1,12 @@
 FROM n8nio/n8n:latest
 
-# Install puppeteer-core and ZenRows SDK
-RUN npm install -g puppeteer-core @zenrows/browser-sdk
+USER root
 
-# Set environment variable to allow external modules
+# Allow unsafe permissions and install required modules globally
+RUN npm config set unsafe-perm true && \
+    npm install -g puppeteer-core @zenrows/browser-sdk
+
+# Allow these external modules in n8n Function nodes
 ENV NODE_FUNCTION_ALLOW_EXTERNAL=puppeteer-core,@zenrows/browser-sdk
 
-# Continue with the n8n startup command (if not already specified)
+USER node
